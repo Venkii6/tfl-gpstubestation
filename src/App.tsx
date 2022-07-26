@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Col from "./components/Col/Col";
 import {
   APP_HEADER,
   ARRIVALS,
@@ -81,7 +82,24 @@ function App() {
         </section>
         <section>
           {loading && <h1 className="loading-state">{LOADING}</h1>}
-          {!loading && !error && <div className="arrival-list-container"></div>}
+          {!loading && !error && (
+            <div className="arrival-list-container">
+              <>
+                {Object.keys(listOfTrains).length > 0 &&
+                  Object.keys(listOfTrains).map((platformName: string) => {
+                    const localItem = listOfTrains[platformName];
+                    return (
+                      <div className="col-divider">
+                        <h3 className="platform-heading">
+                          Platform: {platformName}
+                        </h3>
+                        <Col arrivalsData={localItem} />
+                      </div>
+                    );
+                  })}
+              </>
+            </div>
+          )}
           {!loading && error && <h1 className="api-error">{error}</h1>}
         </section>
       </div>
