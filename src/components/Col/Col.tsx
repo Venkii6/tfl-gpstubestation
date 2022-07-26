@@ -12,15 +12,13 @@ const Col = ({ arrivalsData }: ArrivalInfo) => {
       {arrivalsData &&
         arrivalsData?.length &&
         arrivalsData?.map(
-          ({
-            currentLocation,
-            destinationName,
-            expectedArrival,
-            platformName,
-          }) => {
+          (
+            { currentLocation, destinationName, expectedArrival, platformName },
+            idx
+          ) => {
             return (
               <Card
-                key={`${currentLocation}${expectedArrival}${destinationName}`}
+                key={`${currentLocation}${expectedArrival}${destinationName}${idx}`}
                 currentLocation={currentLocation}
                 destination={destinationName}
                 expectedArrival={expectedArrival}

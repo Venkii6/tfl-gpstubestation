@@ -25,3 +25,10 @@ export interface ArrivalInfoItem {
 export interface TrainDetails {
   [key: string]: ArrivalInfoItem[];
 }
+
+export interface Arrivals {
+  currentLocation?: string;
+  destination?: string;
+  expectedArrival: string;
+  platForm: string;
+}

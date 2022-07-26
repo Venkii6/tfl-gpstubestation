@@ -1,0 +1,23 @@
+.card-wrapper {
+  width: 47vw;
+  border: 1px solid lightBlue;
+  padding: 5px;
+  margin: 2px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card-wrapper {
+    width: 46vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .card-wrapper {
+    width: 90vw;
+  }
+}
+
+.card-wrapper > li {
+  padding: 5px;
+  list-style-type: none;
+}
